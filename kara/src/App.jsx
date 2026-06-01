@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import logo from "./assets/logo.png";
+import liveBandPoster from "./assets/live_band_poster.jpg";
+import weddingStage from "./assets/luxury_wedding_stage.png";
+import jewelleryPavilion from "./assets/jewellery_pavilion.png";
+import exhibitionStalls from "./assets/exhibition_stalls.png";
+import luxurySetup from "./assets/luxury_setup.png";
+import liveMusicBand from "./assets/live_music_band.png";
 function App() {
   const [activeTab, setActiveTab] = useState("home");
+
+  // Scroll to top automatically when active tab changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [activeTab]);
 
   const handleSponsorCTA = () => {
     setActiveTab("sponsors");
@@ -21,11 +32,11 @@ function App() {
       {/* STICKY GLASS HEADER */}
       <header className="header">
         <div className="nav-container">
-          <div className="logo-container" style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-            <img src={logo} alt="KARA Logo" style={{ height: "55px", width: "auto", borderRadius: "8px" }} />
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <span className="logo-main" style={{ fontSize: "1.45rem", lineHeight: "1.1", fontWeight: "800" }}>KARA</span>
-              <span className="logo-sub" style={{ fontSize: "0.65rem", letterSpacing: "1px" }}>Wedding Expo 2026</span>
+          <div className="logo-link">
+            <img src={logo} alt="KARA Logo" className="logo-img" />
+            <div className="logo-info">
+              <span className="logo-main">KARA</span>
+              <span className="logo-sub">Wedding Expo 2026</span>
             </div>
           </div>
 
@@ -123,27 +134,42 @@ function App() {
                 <span className="section-subtitle">What's Waiting For You</span>
                 <h2 className="section-title">Expo Highlights</h2>
               </div>
-
-              <div className="grid-4">
-                <div className="highlight-card">
-                  <span className="card-icon">🛍️</span>
-                  <h3>Exhibition Stalls</h3>
-                  <p>Premium stalls presenting direct bridal wear, designer jewelry, styling, photography, and wedding gifts.</p>
+ 
+              <div className="highlights-container">
+                <div className="highlights-poster-side">
+                  <img src={liveBandPoster} alt="Live Band Performing at KARA Wedding Expo 2026" className="highlights-poster-img" />
                 </div>
-                <div className="highlight-card">
-                  <span className="card-icon">✨</span>
-                  <h3>Luxury Setup</h3>
-                  <p>World-class, premium exhibition environment inside Ongole's premier A1 Convention Center.</p>
-                </div>
-                <div className="highlight-card">
-                  <span className="card-icon">🎵</span>
-                  <h3>Live Anantha Band</h3>
-                  <p>Non-stop family entertainment, live concert, food court experiences, and high-energy ambient music.</p>
-                </div>
-                <div className="highlight-card">
-                  <span className="card-icon">💎</span>
-                  <h3>Jewellery Pavilion</h3>
-                  <p>Exclusive spotlight zone for premium gold, diamond, and handcrafted traditional bridal collections.</p>
+                <div className="highlights-cards-side">
+                  <div className="grid-2">
+                    <div className="highlight-card">
+                      <div className="highlight-card-image-wrap">
+                        <img src={exhibitionStalls} alt="Exhibition Stalls" className="highlight-card-img" />
+                      </div>
+                      <h3>Exhibition Stalls</h3>
+                      <p>Premium stalls presenting direct bridal wear, designer jewelry, styling, photography, and wedding gifts.</p>
+                    </div>
+                    <div className="highlight-card">
+                      <div className="highlight-card-image-wrap">
+                        <img src={luxurySetup} alt="Luxury Setup" className="highlight-card-img" />
+                      </div>
+                      <h3>Luxury Setup</h3>
+                      <p>World-class, premium exhibition environment inside Ongole's premier A1 Convention Center.</p>
+                    </div>
+                    <div className="highlight-card">
+                      <div className="highlight-card-image-wrap">
+                        <img src={liveMusicBand} alt="Live Music Band" className="highlight-card-img" />
+                      </div>
+                      <h3>Live Anantha Band</h3>
+                      <p>Non-stop family entertainment, live concert, food court experiences, and high-energy ambient music.</p>
+                    </div>
+                    <div className="highlight-card">
+                      <div className="highlight-card-image-wrap">
+                        <img src={jewelleryPavilion} alt="Traditional Bridal Jewellery" className="highlight-card-img" />
+                      </div>
+                      <h3>Jewellery Pavilion</h3>
+                      <p>Exclusive spotlight zone for premium gold, diamond, and handcrafted traditional bridal collections.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -182,6 +208,11 @@ function App() {
                     Vendor Networks & Management
                   </div>
                 </div>
+              </div>
+
+              {/* CURATED STAGE BANNER */}
+              <div className="about-banner-container">
+                <img src={weddingStage} alt="Luxury Curation Stage Banner" className="about-banner-img" />
               </div>
 
               {/* MARKET POTENTIAL */}
