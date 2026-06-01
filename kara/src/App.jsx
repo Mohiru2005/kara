@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-
+import logo from "./assets/logo.png";
 function App() {
   const [activeTab, setActiveTab] = useState("home");
 
@@ -22,7 +22,7 @@ function App() {
       <header className="header">
         <div className="nav-container">
           <div className="logo-container" style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-            <img src="/logo.png" alt="KARA Logo" style={{ height: "55px", width: "auto", borderRadius: "8px" }} />
+            <img src={logo} alt="KARA Logo" style={{ height: "55px", width: "auto", borderRadius: "8px" }} />
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span className="logo-main" style={{ fontSize: "1.45rem", lineHeight: "1.1", fontWeight: "800" }}>KARA</span>
               <span className="logo-sub" style={{ fontSize: "0.65rem", letterSpacing: "1px" }}>Wedding Expo 2026</span>
@@ -184,7 +184,7 @@ function App() {
                 </div>
               </div>
 
-              {/* MARKET POTENTIAL (STREAMLINED METRICS ONLY) */}
+              {/* MARKET POTENTIAL */}
               <div className="market-box">
                 <div className="section-title-wrap" style={{ marginBottom: "30px" }}>
                   <span className="section-subtitle" style={{ color: "var(--accent-light)" }}>The Opportunity</span>
@@ -227,7 +227,7 @@ function App() {
               </div>
             </section>
 
-            {/* CONTACT SECTION - EXCLUSIVELY ON ABOUT US */}
+            {/* CONTACT SECTION */}
             <section className="contact-section" style={{ paddingTop: 0 }}>
               <div className="contact-wrap">
                 <span className="section-subtitle" style={{ color: "var(--accent-light)" }}>Secure Your Spotlight</span>
@@ -465,7 +465,7 @@ function App() {
       {/* FOOTER */}
       <footer className="footer">
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "12px", marginBottom: "15px" }}>
-          <img src="/logo.png" alt="KARA Logo" style={{ height: "35px", width: "auto", borderRadius: "6px" }} />
+          <img src={logo} alt="KARA Logo" style={{ height: "35px", width: "auto", borderRadius: "6px" }} />
           <div className="footer-logo" style={{ margin: 0 }}>
             KARA<span> EVENTS</span>
           </div>

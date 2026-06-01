@@ -70,7 +70,21 @@ body {
   align-items: center;
 }
 
-.logo-container {
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo-img {
+  height: 55px;
+  width: auto;
+  borderRadius: 8px;
+}
+
+.logo-info {
   display: flex;
   flex-direction: column;
 }
@@ -80,6 +94,7 @@ body {
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--text-primary);
+  line-height: 1.1;
   letter-spacing: 1px;
 }
 
@@ -171,6 +186,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 24px;
+}
+
+.badge-center {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 24px auto;
 }
 
 .hero h1 {
@@ -508,11 +529,11 @@ body {
   backdrop-filter: blur(12px);
 }
 
-.market-box h3 {
+.market-title {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--accent-light);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -794,7 +815,13 @@ body {
   font-size: 1.4rem;
   font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 12px;
+  margin: 0;
+}
+
+.footer-logo-img {
+  height: 35px;
+  width: auto;
+  borderRadius: 6px;
 }
 
 .footer-logo span {
