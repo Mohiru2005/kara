@@ -1,4 +1,5 @@
 import logo from "../assets/logo.png";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 
 /**
  * Universal Footer component displaying the brand presence and copyright.
@@ -12,6 +13,17 @@ function Footer() {
           KARA<span> EVENTS</span>
         </div>
       </div>
+
+      <div className="footer-social">
+        <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <FaInstagram />
+        </a>
+
+        <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer">
+          <FaYoutube />
+        </a>
+      </div>
+
       <p className="footer-copy">© 2026 Kara Events • Wedding Expo Ongole • All Rights Reserved</p>
     </footer>
   );
